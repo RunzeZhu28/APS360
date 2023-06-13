@@ -1,1 +1,1 @@
-# APS360 Project Proposal
+# APS360 Project Proposal  Rhythm generator
