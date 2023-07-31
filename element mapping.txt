@@ -1,0 +1,12 @@
+Ambient 74
+Blues 63
+Classical 79
+Country 62
+Jazz 59
+Soul 62
+Pop 57
+Electronic 63
+Rock 84
+Rap 66
+Reggae 54
+Latin 69
