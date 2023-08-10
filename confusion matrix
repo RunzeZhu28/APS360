@@ -1,0 +1,27 @@
+prediction = []
+ground_truth = y_val_tensor.tolist()
+for sample in val_ds:
+  tensor = model(sample[0])
+  print(tensor)
+  pred_probs_numpy = tensor.detach().numpy()
+  pred = np.argmax(pred_probs_numpy)
+  prediction.append(pred)
+
+import numpy as np
+import pandas as pd
+from sklearn.metrics import classification_report, confusion_matrix
+
+class_names = [1,2,3,4,5,6,7,8,9,10]
+conf_matrix = confusion_matrix(ground_truth, prediction)
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Create heatmap
+plt.figure(figsize=(8, 6))
+sns.heatmap(conf_matrix, annot=True, fmt="d", cmap="Blues",
+            xticklabels=class_names, yticklabels=class_names)
+plt.xlabel("Predicted")
+plt.ylabel("True")
+plt.title("Confusion Matrix")
+plt.show()
